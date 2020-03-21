@@ -1,3 +1,19 @@
 # Shapes
 
-A description of this package.
+Commonly used shapes for SwiftUI 
+
+
+
+- **Lines**
+    - `Line`
+    - `HorizontalLine`
+    - `VerticalLine`
+
+- **Triangles** 
+    - `Triangle`
+    - `OpenTriangle`
+    - `RightTriangle`
+    
+- `Infinity`
+- `Arrow`
+-`Polygon`
