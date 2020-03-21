@@ -16,4 +16,4 @@ Commonly used shapes for SwiftUI
     
 - `Infinity`
 - `Arrow`
--`Polygon`
+- `Polygon`
