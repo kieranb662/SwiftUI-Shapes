@@ -17,6 +17,12 @@ public struct Arrow: Shape {
     public var arrowOffset: CGFloat
     public var length: CGFloat
     
+    public init(arrowOffset: CGFloat, length: CGFloat) {
+        self.arrowOffset = arrowOffset
+        self.length = length
+    }
+    
+    
         public var animatableData: AnimatablePair<CGFloat, CGFloat> {
             get { AnimatablePair(arrowOffset, length) }
             set {
@@ -53,7 +59,9 @@ public struct ArrowMeter: View {
     @State var val: Double = 10
     @State var isHidden: Bool = false
     
-    
+    public init() {
+        
+    }
     public var body: some View {
         VStack {
             HStack(spacing: 0) {

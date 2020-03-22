@@ -9,6 +9,11 @@ import SwiftUI
 
 @available(iOS 13.0, macOS 10.15, watchOS 6.0 , tvOS 13.0, *)
 public struct Triangle: Shape {
+    
+    
+    public init() {
+        
+    }
     public func path(in rect: CGRect) -> Path {
         Path { (path) in
             let w = rect.width
@@ -24,6 +29,9 @@ public struct Triangle: Shape {
 }
 @available(iOS 13.0, macOS 10.15, watchOS 6.0 , tvOS 13.0, *)
 public struct OpenTriangle: Shape {
+    public init() {
+        
+    }
     public func path(in rect: CGRect) -> Path {
         Path { (path) in
             let w = rect.width
@@ -38,6 +46,9 @@ public struct OpenTriangle: Shape {
 }
 @available(iOS 13.0, macOS 10.15, watchOS 6.0 , tvOS 13.0, *)
 public struct RightTriangle: Shape {
+    public init() {
+        
+    }
     public func path(in rect: CGRect) -> Path {
         Path { (path) in
             let w = rect.width

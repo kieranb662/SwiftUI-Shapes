@@ -9,6 +9,10 @@ import SwiftUI
 
 @available(iOS 13.0, macOS 10.15, watchOS 6.0 , tvOS 13.0, *)
 public struct InfinitySymbol: Shape {
+    
+    public init() {
+        
+    }
     public func path(in rect: CGRect) -> Path {
         return InfinitySymbol.createInfinityPath(in: rect)
     }

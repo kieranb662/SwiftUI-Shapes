@@ -11,7 +11,10 @@ import SwiftUI
 public struct Polygon: Shape {
     public var sides: Double
     public var scale: Double
-    
+    public init(sides: Double, scale: Double) {
+        self.sides = sides
+        self.scale = scale 
+    }
     public var animatableData: AnimatablePair<Double, Double> {
         get { AnimatablePair(sides, scale) }
         set {
