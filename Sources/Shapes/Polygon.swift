@@ -9,8 +9,8 @@ import SwiftUI
 
 @available(iOS 13.0, macOS 10.15, watchOS 6.0 , tvOS 13.0, *)
 public struct Polygon: Shape {
-    var sides: Double
-    var scale: Double
+    public var sides: Double
+    public var scale: Double
     
     public var animatableData: AnimatablePair<Double, Double> {
         get { AnimatablePair(sides, scale) }

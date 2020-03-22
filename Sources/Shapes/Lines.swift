@@ -10,8 +10,8 @@ import CGExtender
 
 @available(iOS 13.0, macOS 10.15, watchOS 6.0 , tvOS 13.0, *)
 public struct Line: Shape {
-    var from: CGPoint
-    var to: CGPoint
+    public var from: CGPoint
+    public var to: CGPoint
     
     public var animatableData: AnimatablePair<CGPoint, CGPoint> {
         get { AnimatablePair(from, to) }

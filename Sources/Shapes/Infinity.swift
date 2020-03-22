@@ -13,7 +13,7 @@ public struct InfinitySymbol: Shape {
         return InfinitySymbol.createInfinityPath(in: rect)
     }
 
-    static func createInfinityPath(in rect: CGRect) -> Path {
+    public static func createInfinityPath(in rect: CGRect) -> Path {
         let height = rect.size.height
         let width = rect.size.width
         let heightFactor = height/4

@@ -14,8 +14,8 @@ import SwiftUI
 @available(iOS 13.0, macOS 10.15, watchOS 6.0 , tvOS 13.0, *)
 public struct Arrow: Shape {
     
-    var arrowOffset: CGFloat
-    var length: CGFloat
+    public var arrowOffset: CGFloat
+    public var length: CGFloat
     
         public var animatableData: AnimatablePair<CGFloat, CGFloat> {
             get { AnimatablePair(arrowOffset, length) }
