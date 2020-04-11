@@ -1,6 +1,6 @@
 import SwiftUI
 
-
+/// A type erased `Shape`
 @available(iOS 13.0, macOS 10.15, watchOS 6.0 , tvOS 13.0, *)
 public struct AnyShape: Shape {
     private let _makePath: (CGRect) -> Path

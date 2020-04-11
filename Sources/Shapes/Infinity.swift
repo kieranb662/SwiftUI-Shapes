@@ -1,18 +1,9 @@
-//
-//  File.swift
-//  
-//
-//  Created by Kieran Brown on 3/21/20.
-//
-
 import SwiftUI
 
+// https://swiftui-lab.com/swiftui-animations-part2/
 @available(iOS 13.0, macOS 10.15, watchOS 6.0 , tvOS 13.0, *)
 public struct InfinitySymbol: Shape {
-    
-    public init() {
-        
-    }
+    public init() {}
     public func path(in rect: CGRect) -> Path {
         return InfinitySymbol.createInfinityPath(in: rect)
     }

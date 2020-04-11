@@ -1,19 +1,10 @@
-//
-//  Triangles.swift
-//  
-//
 //  Created by Kieran Brown on 3/21/20.
-//
-
+//  Copyright © 2020 BrownandSons. All rights reserved.
 import SwiftUI
 
 @available(iOS 13.0, macOS 10.15, watchOS 6.0 , tvOS 13.0, *)
 public struct Triangle: Shape {
-    
-    
-    public init() {
-        
-    }
+    public init() {}
     public func path(in rect: CGRect) -> Path {
         Path { (path) in
             let w = rect.width
@@ -29,14 +20,11 @@ public struct Triangle: Shape {
 }
 @available(iOS 13.0, macOS 10.15, watchOS 6.0 , tvOS 13.0, *)
 public struct OpenTriangle: Shape {
-    public init() {
-        
-    }
+    public init() {}
     public func path(in rect: CGRect) -> Path {
         Path { (path) in
             let w = rect.width
             let h = rect.height
-            
             path.move(to: CGPoint(x: 0, y: 0))
             path.addLine(to: CGPoint(x: w, y: h/2))
             path.addLine(to: CGPoint(x: 0, y: h))
@@ -46,9 +34,7 @@ public struct OpenTriangle: Shape {
 }
 @available(iOS 13.0, macOS 10.15, watchOS 6.0 , tvOS 13.0, *)
 public struct RightTriangle: Shape {
-    public init() {
-        
-    }
+    public init() {}
     public func path(in rect: CGRect) -> Path {
         Path { (path) in
             let w = rect.width

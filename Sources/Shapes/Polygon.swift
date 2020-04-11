@@ -1,12 +1,5 @@
-//
-//  Polygon.swift
-//  
-//
-//  Created by Kieran Brown on 3/21/20.
-//
-
 import SwiftUI
-
+// https://swiftui-lab.com/swiftui-animations-part1/
 @available(iOS 13.0, macOS 10.15, watchOS 6.0 , tvOS 13.0, *)
 public struct Polygon: Shape {
     public var sides: Double

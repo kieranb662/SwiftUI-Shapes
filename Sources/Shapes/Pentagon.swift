@@ -1,10 +1,6 @@
-//
-//  Pentagon.swift
-//  MyExamples
-//
 //  Created by Kieran Brown on 4/8/20.
 //  Copyright © 2020 BrownandSons. All rights reserved.
-//
+
 
 import SwiftUI
 
