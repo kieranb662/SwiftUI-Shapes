@@ -8,6 +8,8 @@ If you have an idea for a shape but don't know how to describe it, try out the `
 <p align="center">
 <img src="https://github.com/kieranb662/bez/blob/master/Media/PathEditor.gif" height=500/>
 </p>
+
+
 - **Lines**
     - `Line`
     - `HorizontalLine`
