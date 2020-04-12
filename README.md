@@ -27,7 +27,7 @@ If you have an idea for a shape but don't know how to describe it, try out the `
     - `PolarGrid`
     - `RadialTickMarks`
     
--    **Misc**
+- **Misc**
     - `InfinitySymbol`
     - `Arrow`
     - `Polygon`
