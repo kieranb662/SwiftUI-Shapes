@@ -1,7 +1,7 @@
 # Shapes
 
 Commonly used shapes for SwiftUI, some I found on the web [swiftui-lab](https://swiftui-lab.com) and [objc.io](https://www.objc.io/blog/2019/12/16/drawing-trees), others I made myself.
-I hope to create community based repo for cool animated shapes, paths, etc. If you would like to submit some of your own shapes just make a pull request and I will try to approve it ASAP.
+I hope to create community based repo for cool animated shapes, paths, etc. If you would like to submit some of your own shapes just make a pull request and I will try to approve it ASAP. If you want to try out this package just clone the [example project](https://github.com/kieranb662/Shapes-Examples)
 
 If you have an idea for a shape but don't know how to describe it, try out the `PathEditor` tool that comes packaged with [bez](https://github.com/kieranb662/bez)
 
