@@ -26,11 +26,12 @@ If you have an idea for a shape but don't know how to describe it, try out the `
     - `TickMarks`
     - `PolarGrid`
     - `RadialTickMarks`
-    
+
 - **Misc**
     - `InfinitySymbol`
     - `Arrow`
     - `Polygon`
     - `Pentagon`
     - `PathText`
+    - `FoldableShape`
 
