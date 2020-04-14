@@ -7,8 +7,9 @@
 //
 
 import SwiftUI
-import Shapes
 
+
+@available(iOS 13.0, macOS 10.15, watchOS 6.0 , tvOS 13.0, *)
 extension Path {
     /// The array of `Path.Elements` describing the path
     var elements: [Path.Element] {
@@ -73,15 +74,29 @@ extension Path {
 
 
 
-/// # Foldable Path
-/// A Path which can be folded over itself.
-struct FoldableShape<S: Shape>: View {
+/// # Foldable Shape
+/// A Shape which can be folded over itself.
+@available(iOS 13.0, macOS 10.15, watchOS 6.0 , tvOS 13.0, *)
+public struct FoldableShape<S: Shape>: View {
     var shape: S
     var mainColor: Color = .yellow
     var foldColor: Color = .pink
     var fraction: CGFloat
+    
+    public init(_ shape: S, fraction: CGFloat) {
+        self.shape = shape
+        self.fraction = fraction
+    }
+    
+    public init(_ shape: S, fraction: CGFloat, mainColor: Color, foldColor: Color) {
+        self.shape = shape
+        self.fraction = fraction
+        self.mainColor = mainColor
+        self.foldColor = foldColor
+    }
+    
     /// Function reflects a point over the line that crosses between r1 and r2
-    func reflect(_ r1: CGPoint, _ r2: CGPoint, _ p: CGPoint) -> CGPoint {
+    private func reflect(_ r1: CGPoint, _ r2: CGPoint, _ p: CGPoint) -> CGPoint {
         let a = (r2.y-r1.y)
         let b = -(r2.x-r1.x)
         let c = -a*r1.x - b*r1.y
@@ -101,7 +116,7 @@ struct FoldableShape<S: Shape>: View {
     ///     1. Get the fraction of the path that will serve as the folded peice
     ///     2. Get the start and end points of that path
     ///     3. Create the reflected path by Iterating through all pathFractions elements, reflecting any curve across the line defined by the start and end points.
-    func makeFold(path: Path) -> some View {
+    private func makeFold(path: Path) -> some View {
         let pathFraction = path.trimmedPath(from: fraction, to: 1)
         let start = pathFraction.getStartPoint() ?? .zero
         let end = pathFraction.getEndPoint() ?? .zero
@@ -128,7 +143,7 @@ struct FoldableShape<S: Shape>: View {
         }
     }
     
-    var body: some View {
+    public var body: some View {
         GeometryReader { (proxy: GeometryProxy) in
             ZStack {
                 self.shape.path(in: proxy.frame(in: .global)).trimmedPath(from: 0, to:  self.fraction)
