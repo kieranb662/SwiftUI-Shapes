@@ -61,7 +61,7 @@ public struct VerticalLine: Shape {
     public func path(in rect: CGRect) -> Path {
         Path { path in
             path.move(to: CGPoint(x: rect.maxX*offset, y: 0))
-            path.addLine(to: CGPoint(x: rect.midX*offset, y: rect.height))
+            path.addLine(to: CGPoint(x: rect.maxX*offset, y: rect.height))
         }
     }
 }
