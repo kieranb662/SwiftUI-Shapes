@@ -1,5 +1,5 @@
 <p align="center">
-<img src="ShapesLogo.svg" alt="Shapes Logo"/>
+<img src="ShapesLogo.svg" alt="Shapes Logo" height=300/>
 </p>
 
 Commonly used shapes for SwiftUI, some I found on the web [swiftui-lab](https://swiftui-lab.com) and [objc.io](https://www.objc.io/blog/2019/12/16/drawing-trees), others I made myself.
