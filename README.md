@@ -6,6 +6,15 @@
 Commonly used shapes for SwiftUI, some I found on the web [swiftui-lab](https://swiftui-lab.com) and [objc.io](https://www.objc.io/blog/2019/12/16/drawing-trees), others I made myself.
 I hope to create community based repo for cool animated shapes, paths, etc. If you would like to submit some of your own shapes just make a pull request and I will try to approve it ASAP. If you want to try out this package just clone the [example project](https://github.com/kieranb662/Shapes-Examples)
 
+Or create your own shapes using the [bez editor](https://apps.apple.com/us/app/bez-editor/id1508764103) app available for free on iOS 13.4 and greater. 
+
+<p align="center">
+  <a href="https://apps.apple.com/us/app/bez-editor/id1508764103">
+  <img src="https://github.com/kieranb662/kieranb662.github.io/blob/master/assets/bezeditorPreview.gif">
+  </a>
+  </p>
+
+
 <p align="center">
   <img src="https://github.com/kieranb662/Shapes-Examples/blob/master/Media/ShapesCollage.PNG" >
   </p>
