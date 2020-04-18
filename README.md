@@ -10,7 +10,7 @@ Or create your own shapes using the [bez editor](https://apps.apple.com/us/app/b
 
 <p align="center">
   <a href="https://apps.apple.com/us/app/bez-editor/id1508764103">
-  <img src="https://github.com/kieranb662/kieranb662.github.io/blob/master/assets/bezeditorPreview.gif">
+  <img width="300px" src="https://github.com/kieranb662/kieranb662.github.io/blob/master/assets/bezeditorPreview.gif">
   </a>
   </p>
 
