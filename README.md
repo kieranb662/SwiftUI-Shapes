@@ -3,6 +3,13 @@
 <img src="ShapesLogo.svg"/>
 </p>
 
+<p align="center">
+    <img src="https://img.shields.io/badge/platforms-iOS_13_|macOS_10.15_| watchOS_6.0-blue.svg" alt="SwiftUI" />
+    <img src="https://img.shields.io/badge/Swift-5.1-orange.svg" alt="Swift 5.1" />
+    <img src="https://img.shields.io/badge/SwiftPM-compatible-green.svg" alt="Swift 5.1" />
+    <img src="https://img.shields.io/github/followers/kieranb662?label=Follow" alt="kieranb662 followers" />
+</p>
+
 Commonly used shapes for SwiftUI, some I found on the web [swiftui-lab](https://swiftui-lab.com) and [objc.io](https://www.objc.io/blog/2019/12/16/drawing-trees), others I made myself.
 I hope to create community based repo for cool animated shapes, paths, etc. If you would like to submit some of your own shapes just make a pull request and I will try to approve it ASAP. If you want to try out this package just clone the [example project](https://github.com/kieranb662/Shapes-Examples)
 
