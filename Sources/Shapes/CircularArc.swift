@@ -8,13 +8,23 @@
 
 import SwiftUI
 
-struct CircularArc: Shape {
+public struct CircularArc: Shape {
     public var start: CGPoint
     public var center: CGPoint
     public var radius: CGFloat
     public var startAngle: Angle
     public var endAngle: Angle
     public var clockwise: Bool
+    
+    public init(start: CGPoint, center: CGPoint, radius: CGFloat, startAngle: Angle, endAngle: Angle, clockwise: Bool) {
+        self.start = start
+        self.center = center
+        self.radius = radius 
+        self.startAngle = startAngle
+        self.endAngle = endAngle
+        self.clockwise = clockwise
+        
+    }
 
     public var animatableData: AnimatablePair<AnimatablePair<AnimatablePair<CGPoint, CGPoint>, AnimatablePair<Double, Double>>, CGFloat> {
         get {AnimatablePair(AnimatablePair(AnimatablePair(start, center), AnimatablePair(startAngle.degrees, endAngle.degrees)), radius)}
@@ -28,7 +38,7 @@ struct CircularArc: Shape {
     }
 
 
-    func path(in rect: CGRect) -> Path {
+    public func path(in rect: CGRect) -> Path {
         Path { path in
             path.move(to: self.start)
             path.addArc(center: self.center,
