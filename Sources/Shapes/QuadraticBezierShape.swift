@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-struct QuadraticBezierShape: Shape {
+public struct QuadraticBezierShape: Shape {
     public var start: CGPoint
     public var control: CGPoint
     public var end: CGPoint
@@ -27,7 +27,7 @@ struct QuadraticBezierShape: Shape {
         }
     }
 
-    func path(in rect: CGRect) -> Path {
+    public func path(in rect: CGRect) -> Path {
         Path { path in
             path.move(to: self.start)
             path.addQuadCurve(to: self.end,
