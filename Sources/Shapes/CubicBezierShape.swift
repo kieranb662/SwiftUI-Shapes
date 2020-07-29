@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-struct CubicBezierShape: Shape {
+public struct CubicBezierShape: Shape {
     public var start: CGPoint
     public var control1: CGPoint
     public var control2: CGPoint
@@ -30,7 +30,7 @@ struct CubicBezierShape: Shape {
         }
     }
 
-    func path(in rect: CGRect) -> Path {
+    public func path(in rect: CGRect) -> Path {
         Path { path in
             path.move(to: self.start)
             path.addCurve(to: self.end,
