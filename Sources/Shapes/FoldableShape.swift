@@ -8,8 +8,6 @@
 
 import SwiftUI
 
-
-@available(iOS 13.0, macOS 10.15, watchOS 6.0 , tvOS 13.0, *)
 extension Path {
     /// The array of `Path.Elements` describing the path
     var elements: [Path.Element] {
@@ -19,13 +17,13 @@ extension Path {
         }
         return temp
     }
-    
+
     /// Returns the starting point of the path
     func getStartPoint() -> CGPoint? {
         if isEmpty {
             return nil
         }
-        
+
         guard let first = elements.first(where: {
             switch $0 {
             case .move(_):
@@ -36,7 +34,7 @@ extension Path {
         }) else {
             return nil
         }
-        
+
         switch first {
         case .move(let to):
             return to
@@ -44,13 +42,13 @@ extension Path {
             return nil
         }
     }
-    
+
     /// Returns the last point on the path rom the last curve command
     func getEndPoint() -> CGPoint? {
         if isEmpty {
             return nil
         }
-        
+
         guard let last = elements.reversed().first(where: { (element) in
             switch element {
             case .line(_), .quadCurve(_, _), .curve(_, _, _):
@@ -61,40 +59,32 @@ extension Path {
         }) else {
             return nil
         }
-        
+
         switch last {
         case .line(let to), .quadCurve(let to, _), .curve(let to, _, _):
             return to
         default:
             return nil
-            
+
         }
     }
 }
 
-
-
 /// # Foldable Shape
 /// A Shape which can be folded over itself.
-@available(iOS 13.0, macOS 10.15, watchOS 6.0 , tvOS 13.0, *)
 public struct FoldableShape<S: Shape>: View {
     var shape: S
-    var mainColor: Color = .yellow
-    var foldColor: Color = .pink
+    var mainColor: Color
+    var foldColor: Color
     var fraction: CGFloat
-    
-    public init(_ shape: S, fraction: CGFloat) {
-        self.shape = shape
-        self.fraction = fraction
-    }
-    
-    public init(_ shape: S, fraction: CGFloat, mainColor: Color, foldColor: Color) {
+
+    public init(_ shape: S, fraction: CGFloat, mainColor: Color = .yellow, foldColor: Color = .pink) {
         self.shape = shape
         self.fraction = fraction
         self.mainColor = mainColor
         self.foldColor = foldColor
     }
-    
+
     /// Function reflects a point over the line that crosses between r1 and r2
     private func reflect(_ r1: CGPoint, _ r2: CGPoint, _ p: CGPoint) -> CGPoint {
         let a = (r2.y-r1.y)
@@ -104,13 +94,13 @@ public struct FoldableShape<S: Shape>: View {
         let ai = a/magnitude
         let bi = b/magnitude
         let ci = c/magnitude
-        
+
         let d = ai*p.x + bi*p.y + ci
         let x = p.x - 2*ai*d
         let y = p.y - 2*bi*d
         return CGPoint(x: x, y: y)
     }
-    
+
     /// Creates the folded portion of the path given the large and small fractions which define line that the portion is folded over.
     /// Procedure:
     ///     1. Get the fraction of the path that will serve as the folded peice
@@ -120,8 +110,8 @@ public struct FoldableShape<S: Shape>: View {
         let pathFraction = path.trimmedPath(from: fraction, to: 1)
         let start = pathFraction.getStartPoint() ?? .zero
         let end = pathFraction.getEndPoint() ?? .zero
-        
-        
+
+
         return Path { path in
             pathFraction.forEach { element in
                 switch element.self {
@@ -142,11 +132,12 @@ public struct FoldableShape<S: Shape>: View {
             }
         }
     }
-    
+
     public var body: some View {
         GeometryReader { (proxy: GeometryProxy) in
             ZStack {
-                self.shape.path(in: proxy.frame(in: .global)).trimmedPath(from: 0, to:  self.fraction)
+                self.shape.path(in: proxy.frame(in: .global))
+                    .trimmedPath(from: 0, to:  self.fraction)
                     .foregroundColor(self.mainColor)
                     .opacity(0.4)
                 self.makeFold(path: self.shape.path(in: proxy.frame(in: .global)))

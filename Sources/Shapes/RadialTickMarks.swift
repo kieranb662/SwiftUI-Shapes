@@ -3,7 +3,7 @@
 
 
 import SwiftUI
-@available(iOS 13.0, macOS 10.15, watchOS 6.0 , tvOS 13.0, *)
+
 public struct RadialTickMarks: Shape {
     func determineScale(_ i: Int) -> CGFloat {
         switch i%6 {
@@ -13,8 +13,9 @@ public struct RadialTickMarks: Shape {
         default:      return 0
         }
     }
-    
+
     public init() {}
+
     public func path(in rect: CGRect) -> Path {
         Path { path in
             let r = min(rect.width, rect.height)/2
@@ -29,6 +30,5 @@ public struct RadialTickMarks: Shape {
             }
         }
     }
-    
-}
 
+}

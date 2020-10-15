@@ -1,10 +1,8 @@
 //  Created by Kieran Brown on 4/8/20.
 //  Copyright © 2020 BrownandSons. All rights reserved.
 
-
 import SwiftUI
 
-@available(iOS 13.0, macOS 10.15, watchOS 6.0 , tvOS 13.0, *)
 public struct PolarGrid: Shape {
     public var rCount: Int
     public var thetaCount: Int
@@ -12,7 +10,7 @@ public struct PolarGrid: Shape {
         self.rCount = rCount
         self.thetaCount = thetaCount
     }
-    
+
     public func path(in rect: CGRect) -> Path {
         let w = rect.width
         let h = rect.height

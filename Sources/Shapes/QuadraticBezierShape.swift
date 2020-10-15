@@ -30,8 +30,7 @@ public struct QuadraticBezierShape: Shape {
     public func path(in rect: CGRect) -> Path {
         Path { path in
             path.move(to: self.start)
-            path.addQuadCurve(to: self.end,
-                              control: self.control)
+            path.addQuadCurve(to: self.end, control: self.control)
         }
     }
 }

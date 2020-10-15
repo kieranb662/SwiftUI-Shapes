@@ -4,22 +4,28 @@
 
 import SwiftUI
 
-@available(iOS 13.0, macOS 10.15, watchOS 6.0 , tvOS 13.0, *)
 public struct Pentagon: Shape {
     public init() {}
+    var insetAmount: CGFloat = 0
     public func path(in rect: CGRect) -> Path {
         let w = rect.width
         let h = rect.height
 
         return Path { path in
-            path.move(to: CGPoint(x: w/2, y: 0))
-            path.addLine(to: CGPoint(x: 0, y: h/2))
-            path.addLine(to: CGPoint(x: 0, y: h))
-            path.addLine(to: CGPoint(x: w, y: h))
-            path.addLine(to: CGPoint(x: w, y: h/2))
+            path.move(to: CGPoint(x: w/2, y: insetAmount))
+            path.addLine(to: CGPoint(x: insetAmount, y: h/2))
+            path.addLine(to: CGPoint(x: insetAmount, y: h - insetAmount))
+            path.addLine(to: CGPoint(x: w - insetAmount, y: h - insetAmount))
+            path.addLine(to: CGPoint(x: w - insetAmount, y: h/2))
             path.closeSubpath()
         }
     }
 }
 
-
+extension Pentagon: InsettableShape {
+    public func inset(by amount: CGFloat) -> some InsettableShape {
+        var shape = self
+        shape.insetAmount += amount
+        return shape
+    }
+}

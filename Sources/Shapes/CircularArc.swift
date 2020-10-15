@@ -15,15 +15,15 @@ public struct CircularArc: Shape {
     public var startAngle: Angle
     public var endAngle: Angle
     public var clockwise: Bool
-    
+
     public init(start: CGPoint, center: CGPoint, radius: CGFloat, startAngle: Angle, endAngle: Angle, clockwise: Bool) {
         self.start = start
         self.center = center
-        self.radius = radius 
+        self.radius = radius
         self.startAngle = startAngle
         self.endAngle = endAngle
         self.clockwise = clockwise
-        
+
     }
 
     public var animatableData: AnimatablePair<AnimatablePair<AnimatablePair<CGPoint, CGPoint>, AnimatablePair<Double, Double>>, CGFloat> {

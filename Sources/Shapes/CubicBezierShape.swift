@@ -33,9 +33,7 @@ public struct CubicBezierShape: Shape {
     public func path(in rect: CGRect) -> Path {
         Path { path in
             path.move(to: self.start)
-            path.addCurve(to: self.end,
-                          control1: self.control1,
-                          control2: self.control2)
+            path.addCurve(to: self.end,control1: self.control1, control2: self.control2)
         }
     }
 }
