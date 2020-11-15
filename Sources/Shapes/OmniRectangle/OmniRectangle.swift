@@ -48,7 +48,6 @@ public struct OmniRectangle: Shape {
                                      topCurvature: topEdgeCurvature,
                                      rightCurvature: rightEdgeCurvature,
                                      bottomCurvature: bottomEdgeCurvature)
-        
         self.cornerStyles = .allSquare()
     }
     
@@ -87,6 +86,7 @@ extension OmniRectangle: InsettableShape {
         return shape
     }
 }
+
 //
 //extension OmniRectangle {
 //    fileprivate func prepare(stroke: StrokeStyle, width: CGFloat = 100, height: CGFloat = 100) -> some View {
