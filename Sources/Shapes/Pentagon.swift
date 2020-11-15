@@ -5,20 +5,25 @@
 import SwiftUI
 
 public struct Pentagon: Shape {
+    /// Creates a square bottomed pentagon.
     public init() {}
+    
     var insetAmount: CGFloat = 0
+    
     public func path(in rect: CGRect) -> Path {
-        let w = rect.width
-        let h = rect.height
+        let insetRect: CGRect = rect.insetBy(dx: insetAmount, dy: insetAmount)
+        let w = insetRect.width
+        let h = insetRect.height
 
         return Path { path in
-            path.move(to: CGPoint(x: w/2, y: insetAmount))
-            path.addLine(to: CGPoint(x: insetAmount, y: h/2))
-            path.addLine(to: CGPoint(x: insetAmount, y: h - insetAmount))
-            path.addLine(to: CGPoint(x: w - insetAmount, y: h - insetAmount))
-            path.addLine(to: CGPoint(x: w - insetAmount, y: h/2))
+            path.move(to:    CGPoint(x: w/2, y:   0))
+            path.addLine(to: CGPoint(x:   0, y: h/2))
+            path.addLine(to: CGPoint(x:   0, y:   h))
+            path.addLine(to: CGPoint(x:   w, y:   h))
+            path.addLine(to: CGPoint(x:   w, y: h/2))
             path.closeSubpath()
         }
+        .offsetBy(dx: insetAmount, dy: insetAmount)
     }
 }
 

@@ -21,13 +21,12 @@ public struct TangentArc: Shape {
         self.radius = radius
     }
 
-    public var animatableData: AnimatablePair<AnimatablePair<CGPoint, CGFloat>, AnimatablePair<CGPoint, CGPoint>> {
+    public var animatableData: AnimatablePair<AnimatablePair<CGPoint, CGFloat>,
+                                              AnimatablePair<CGPoint, CGPoint>> {
         get {
             AnimatablePair(
-                AnimatablePair(self.start,
-                               self.radius),
-                AnimatablePair(self.tangent1End,
-                               self.tangent2End)
+                AnimatablePair(self.start, self.radius),
+                AnimatablePair(self.tangent1End, self.tangent2End)
             )
         }
         set {
