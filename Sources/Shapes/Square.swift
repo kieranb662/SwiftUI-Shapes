@@ -1,9 +1,9 @@
 import SwiftUI
 
 public struct Square: Shape {
+    var insetAmount: CGFloat = 0
     /// Creates the largest square that will fit in the containing `CGRect`
     public init() {}
-    var insetAmount: CGFloat = 0
 
     public func path(in rect: CGRect) -> Path {
         Path { path in

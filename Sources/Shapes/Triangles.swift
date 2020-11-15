@@ -4,6 +4,7 @@
 import SwiftUI
 
 public struct Triangle: Shape {
+    private var insetAmount: CGFloat = 0
     var leftEdgeCurvature: CGFloat
     var rightEdgeCurvature: CGFloat
     var bottomEdgeCurvature: CGFloat
@@ -22,8 +23,6 @@ public struct Triangle: Shape {
         self.rightEdgeCurvature = rightEdgeCurvature
         self.bottomEdgeCurvature = bottomEdgeCurvature
     }
-    
-    private var insetAmount: CGFloat = 0
     
     public func path(in rect: CGRect) -> Path {
         let insetRect: CGRect = rect.insetBy(dx: insetAmount, dy: insetAmount)
