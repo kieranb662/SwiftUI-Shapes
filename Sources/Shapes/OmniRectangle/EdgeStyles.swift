@@ -7,8 +7,6 @@
 
 import SwiftUI
 
-
-
 extension OmniRectangle {
     public struct EdgeStyles {
         public var leftCurvature: CGFloat

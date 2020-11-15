@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+
 extension OmniRectangle {
     public enum CornerStyle {
         case round(radius: CGFloat)
